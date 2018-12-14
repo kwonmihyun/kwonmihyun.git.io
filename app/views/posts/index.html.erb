@@ -1,0 +1,43 @@
+
+  <div id="breadcrumb">
+    <div class="container">
+      <div class="breadcrumb">
+        <li><a href="/home/main">Home</a></li>
+        <li>Contact</li>
+      </div>
+    </div>
+  </div>
+
+  <p id="notice"><%= notice %></p>
+  <div align="center">
+    <h1>문의 목록</h1>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>내용</th>
+          <th>이메일</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.title %></td>
+            <td><%= post.content %></td>
+            <td><%= post.email %></td>
+            <td><%= link_to '보기', post %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  
+  <br>
+  
+  <%= paginate @posts %>
+  
+  </div>
+  
+  
